@@ -1,0 +1,17 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        with:
+          heroku_api_key: '3fe5a9a9-986d-4017-9f61-db9ed1677c87'
+          heroku_app_name: 'arcane-springs-70816' #Must be unique in Heroku
+          heroku_email: 'cdex6531@gmail.com'
